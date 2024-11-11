@@ -19,13 +19,13 @@ namespace CRUD.Controllers
             _context = context;
         }
 
-        // GET: Usuarios
+        // GET: Usuarios obtiene los datos de los usuarios registrados y envia al index 
         public async Task<IActionResult> Index()
         {
             return View(await _context.Usuarios.ToListAsync());
         }
 
-        // GET: Usuarios/Details/5
+        // GET: Usuarios/Details/5 obtiene los datos del usuario solicitado
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -43,13 +43,13 @@ namespace CRUD.Controllers
             return View(usuarios);
         }
 
-        // GET: Usuarios/Create
+        // GET: Usuarios/Create 
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Usuarios/Create
+        // POST: Usuarios/Create registra los datos del usuario ingresado
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -81,7 +81,7 @@ namespace CRUD.Controllers
             return View(usuarios);
         }
 
-        // POST: Usuarios/Edit/5
+        // POST: Usuarios/Edit/5 edita los datos del usuario registrado
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -134,7 +134,7 @@ namespace CRUD.Controllers
             return View(usuarios);
         }
 
-        // POST: Usuarios/Delete/5
+        // POST: Usuarios/Delete/5 elimina al usario ingresado
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
